@@ -12,6 +12,10 @@ BuildRequires:  protobuf-devel
 BuildRequires:  zlib-devel
 BuildRequires:  xz-devel
 BuildRoot:      %{_tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Requires:       openssl
+Requires:       protobuf
+Requires:       zlib
+Requires:       xz
 
 %description
 zbackup is a globally-deduplicating backup tool, based on the ideas
