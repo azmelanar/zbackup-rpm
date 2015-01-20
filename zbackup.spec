@@ -1,7 +1,7 @@
 Summary:        A globally-deduplicating backup tool
 Name:           zbackup
-Version:        1.2
-Release:        2
+Version:        1.4.1
+Release:        1
 License:        GPL v2+
 Group:          Applications/Archiving
 URL:            http://zbackup.org/
@@ -30,7 +30,7 @@ required is very low.
 %setup -q
 
 %build
-cmake .
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .
 make %{?_smp_mflags}
 
 %install
@@ -41,9 +41,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/local/bin/%{name}
+%attr(755,root,root) /usr/bin/%{name}
 
 %changelog
+* Tue Jan 20 2015 Dmitriy Slupytskyi <dslupytskyi@gmail.com>
+- new upstream release
+
 * Mon Apr 28 2014 Dmitriy Slupytskyi <dslupytskyi@gmail.com>
 - added dependencies for install
 
